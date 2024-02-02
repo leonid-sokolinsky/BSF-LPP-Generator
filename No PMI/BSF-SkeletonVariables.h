@@ -1,6 +1,6 @@
 /*==============================================================================
-Project: Bulk Synchronous Farm (BSF)
-Theme: BSF Skeleton
+Project: LiFe
+Theme: LPP Generator (no MPI)
 Module: BSF-SceletonVariables.h (Skeleton Variables)
 Prefix: BSF_sv
 Author: Leonid B. Sokolinsky

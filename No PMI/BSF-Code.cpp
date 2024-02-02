@@ -1,6 +1,6 @@
 /*==============================================================================
-Project: Bulk Synchronous Farm (BSF)
-Theme: BSF Cimmino
+Project: LiFe
+Theme: LPP Generator (no MPI)
 Module: BSF-Code.cpp (Problem Independent Code)
 Prefix: BC
 Author: Leonid B. Sokolinsky
@@ -319,7 +319,6 @@ static void BC_ProcessExtendedReduceList_3(BT_extendedReduceElem_T_3* reduceList
 };
 
 static void BC_Init(bool* success) {// Performs the memory allocation and the initialization of the skeleton data structures and variables.
-	cout << setprecision(PP_BSF_PRECISION);
 
 	BD_masterRank = 0;
 	BD_numOfWorkers = 1;

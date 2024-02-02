@@ -1,6 +1,6 @@
 /*==============================================================================
-Project: VaLiPro
-Theme: LPP Generator
+Project: LiFe
+Theme: LPP Generator (no MPI)
 Module: Problem-bsf-Forwards.h (Problem Function Forwards)
 Author: Leonid B. Sokolinsky 
 ==============================================================================*/
@@ -8,14 +8,12 @@ Author: Leonid B. Sokolinsky
 #include "Problem-Types.h"		// Problem Types
 //====================== Problem Functions ===========================
 bool		Like(PT_vector_T a1, PT_float_T b1, PT_float_T a1Norm, PT_vector_T a2, PT_float_T b2, PT_float_T a2Norm);
-void		ProjectionOnHiperplane(PT_vector_T x, PT_vector_T a, PT_float_T aNormSquare, PT_float_T aDotProductx, PT_float_T b, PT_vector_T projection);
-bool		PointIn(PT_vector_T x, PT_vector_T a, PT_float_T b);
-PT_float_T	RndFloatValue(PT_float_T rndMax);
-void		RndFloatVector(PT_vector_T vector);
+void		MTX_AddFreeVariables();
+void		MTX_Make_A(PT_MTX_A_nor_noc A_nor_noc, PT_MTX_A_val A_val, int* non);
 int			RndSign();
-void		Vector_Addition(PT_vector_T x, PT_vector_T y, PT_vector_T z);
+PT_float_T	RndValue(PT_float_T rndMax);
+void		RndVector(PT_vector_T vector);
 void		Vector_Copy(PT_vector_T fromPoint, PT_vector_T toPoint);
-PT_float_T	Vector_DotProduct(PT_vector_T x, PT_vector_T y);
 void		Vector_MultiplyByNumber(PT_vector_T x, PT_float_T r, PT_vector_T y);
 PT_float_T	Vector_NormSquare(PT_vector_T x);
 void		Vector_Subtraction(PT_vector_T x, PT_vector_T y, PT_vector_T z);

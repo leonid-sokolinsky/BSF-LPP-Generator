@@ -1,6 +1,6 @@
 /*==============================================================================
-Project: Bulk Synchronous Farm (BSF)
-Theme: BSF Cimmino
+Project: LiFe
+Theme: LPP Generator (no MPI)
 Module: BSF-Forwards.h (Problem Independent Function Forwards)
 Author: Leonid B. Sokolinsky 
 This source code is a part of BSF Skeleton (https://github.com/leonid-sokolinsky/BSF-skeleton)

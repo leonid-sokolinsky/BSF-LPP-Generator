@@ -1,10 +1,11 @@
 /*==============================================================================
-Project: VaLiPro
-Theme: LPP Generator
+Project: LiFe
+Theme: LPP Generator (no MPI)
 Module: Problem-Include.h (Problem "Include" Files)
 Author: Leonid B. Sokolinsky
 ==============================================================================*/
 #pragma once
+#include <cassert>
 #include <iomanip>
 #include <iostream>
 #include <math.h>
