@@ -1,9 +1,9 @@
 /*==============================================================================
-Project: VaLiPro
+Project: LiFe
 Theme: LPP Generator
 Module: BSF-Data.h (Problem Independent Variables & Data Structures)
 Prefix: BD
-Author: Leonid B. Sokolinsky !
+Author: Leonid B. Sokolinsky
 This source code is a part of BSF Skeleton (https://github.com/leonid-sokolinsky/BSF-skeleton)
 ==============================================================================*/
 #include "BSF-Include.h"			// Problem Independent "Include" Files
@@ -11,12 +11,14 @@ This source code is a part of BSF Skeleton (https://github.com/leonid-sokolinsky
 #include "Problem-bsfParameters.h"	// BSF-skeleton parameters
 // ========================= Constants ========================
 #define BD_EXIT	true			// End of Work
+
 //======================= Compatibility ==========================
 #ifndef PP_BSF_MAX_MPI_SIZE
 #ifdef PP_MAX_MPI_SIZE
 #define PP_BSF_MAX_MPI_SIZE PP_MAX_MPI_SIZE
 #endif // PP_MAX_MPI_SIZE
 #endif // PP_BSF_MAX_MPI_SIZE
+
 // ========================= Variables ========================
 static int	BD_elemsPerWorker;	// Number of elements per worker
 static bool BD_exit;			// Indicator of ending the calculations

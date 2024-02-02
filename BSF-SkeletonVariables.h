@@ -1,5 +1,5 @@
 /*==============================================================================
-Project: VaLiPro
+Project: LiFe
 Theme: LPP Generator
 Module: BSF-SceletonVariables.h (Skeleton Variables)
 Prefix: BSF_sv

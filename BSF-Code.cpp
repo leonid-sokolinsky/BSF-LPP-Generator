@@ -1,5 +1,5 @@
 /*==============================================================================
-Project: VaLiPro
+Project: LiFe
 Theme: LPP Generator
 Module: BSF-Code.cpp (Problem Independent Code)
 Prefix: BC
@@ -409,8 +409,6 @@ static void BC_ProcessExtendedReduceList_3(BT_extendedReduceElem_T_3* reduceList
 };
 
 static void BC_Init(bool* success) {// Performs the memory allocation and the initialization of the skeleton data structures and variables.
-	cout << setprecision(PP_BSF_PRECISION);
-
 	int offset, first, last, subListSize;
 
 	PC_bsf_SetListSize(&BD_listSize);
