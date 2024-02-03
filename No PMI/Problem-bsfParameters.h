@@ -16,7 +16,6 @@ This source code is a part of BSF Skeleton (https://github.com/leonid-sokolinsky
 #define PP_BSF_OMP				// If PP_BSF_OMP is defined then OpenMP is turned on for Map Step
 //#define PP_BSF_NUM_THREADS 12		// If PP_BSF_NUM_THREADS is udefined then all accessable threads are used
 //--------------- BSF Lists parameters (For "No MPI" only) ----------------
-#include "Problem-Parameters.h"
 #define PP_BSF_MAP_LIST_LENGTH		1
 #define PP_BSF_REDUCE_LIST_LENGTH	1
 #define PP_BSF_REDUCE_LIST_1_LENGTH	1
