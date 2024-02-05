@@ -9,13 +9,13 @@ Publication: Sokolinsky L.B., Sokolinskaya I.M. FRaGenLP: A Generator of Random 
 	PCT 2021. Communications in Computer and Information Science. 2021, vol. 1437. 164-177.
 	DOI:10.1007/978-3-030-81691-9_12.
 ==============================================================================*/
-#define PP_DEBUG
+//#define PP_DEBUG
 //=========================== Problem Parameters =========================
-#define PP_N 2
-#define PP_NUM_OF_RND_INEQUALITIES 5	// Number of random inequalities		
+#define PP_N 10
+#define PP_NUM_OF_RND_INEQUALITIES 10	// Number of random inequalities		
+#define PP_RND_SEED 1					// Value used by srand() to seed pseudo-random number generator rand(). 
 #define PP_M (PP_N + 1 + PP_NUM_OF_RND_INEQUALITIES) // Total number of inequalities (+-1)
 #define PP_MTX_NON (PP_M * (PP_N + 1))	// Number of non-zero elements in matrix A for MTX format
-#define PP_RND_SEED 1					// Value used by srand() to seed pseudo-random number generator rand(). 
 										//		0 corresponds to value depending on time.
 #define PP_ALPHA 200					// Length of hypercube edge
 #define PP_THETA (PP_ALPHA/2)			// Radius of large hypersphere

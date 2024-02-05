@@ -38,7 +38,7 @@ int main(int argc, char* argv[]) {
 static void BC_Master() {// The head function of the master process.
 	PC_bsf_ParametersOutput(BD_order.parameter);
 	BD_iterCounter = 0;
-
+	PC_bsf_SetInitParameter(&(BD_order.parameter));
 	BD_t = -(double)time(NULL);
 	do {
 		PC_bsf_JobDispatcher(&(BD_order.parameter), &BD_newJobCase, &BD_exit);

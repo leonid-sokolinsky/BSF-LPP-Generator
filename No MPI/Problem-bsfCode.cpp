@@ -325,9 +325,7 @@ void PC_bsf_ProblemOutput(PT_bsf_reduceElem_T* reduceResult, int reduceCounter, 
 			cout << (PP_OUTPUT_LIMIT < PD_n ? "	..." : "") << "<=\t" << setw(PP_SETW) << PD_b[i] << endl;
 		}
 		cout << "-----------------------------------" << endl;
-
 #endif // PP_MATRIX_OUTPUT
-
 		cout << "Failures 'Similar' = " << PD_failuresType1 << endl;
 	}
 

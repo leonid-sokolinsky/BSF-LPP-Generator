@@ -14,7 +14,6 @@ static int PD_m; // Current number of inequalities
 static int PD_m_predef; // Number of predefined inequalities
 static PT_float_T PD_sqrt_n; // Square root of n
 static int PD_k; // Index of current random inequality
-static PT_float_T PD_centerObjectF;	// Value of object function in the center of hypercube
 static unsigned PD_failuresType1; // Hyperplane is similar to another one
 
 //========================== Problem data structures ==============================

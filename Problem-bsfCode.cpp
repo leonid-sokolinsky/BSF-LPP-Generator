@@ -50,8 +50,8 @@ void PC_bsf_Init(bool* success) {
 		for (int j = 0; j < PD_n; j++)
 			PD_A[PD_m][j] = 1;
 		PD_b[PD_m] = PP_ALPHA * (PD_m - 1) + (PT_float_T)PP_ALPHA / 2;
-		PD_m++; assert(PD_m < PP_M);
-		PD_k++; assert(PD_k < PP_M);
+		PD_m++; assert(PD_m <= PP_M);
+		PD_k++; assert(PD_k <= PP_M);
 	}
 
 	PD_m_predef = PD_m;
@@ -63,10 +63,8 @@ void PC_bsf_Init(bool* success) {
 		for (int j = 0; j < PD_n; j++)
 			PD_c[j] = (PT_float_T)(j + 1);
 	else // Random objective function
-		for (int j = 0; j < PD_n; j++) {
-			PD_c[j] = (PT_float_T)(rand() % (PD_n + 1) + 1);
-			PD_centerObjectF += PD_c[j];
-		}
+		for (int j = 0; j < PD_n; j++) 
+			PD_c[j] = (PT_float_T)(rand() % PD_n + 1);
 
 	for (int i = 0; i < PD_m; i++)
 		PD_aNorm[i] = sqrt(Vector_NormSquare(PD_A[i]));
@@ -195,7 +193,7 @@ void PC_bsf_ProcessResults(		// For Job 0
 		Vector_Copy(extendedReduceElem[w].elem.a, PD_A[PD_k]);
 		PD_b[PD_k] = extendedReduceElem[w].elem.b;
 		PD_aNorm[PD_k] = extendedReduceElem[w].elem.aNorm;
-		PD_k++; assert(PD_k < PP_M);
+		PD_k++; assert(PD_k <= PP_M);
 
 		if (PD_k == PP_NUM_OF_RND_INEQUALITIES + 2 * PD_n + 1) {
 			*exit = true;
@@ -317,17 +315,19 @@ void PC_bsf_ProblemOutput(PT_bsf_reduceElem_T* reduceResult, int reduceCounter, 
 	cout << "=============================================" << endl;
 	cout << "Time: " << t << endl;
 	cout << "Iterations: " << BSF_sv_iterCounter << endl;
-#ifdef PP_MATRIX_OUTPUT
-	cout << "------- Random inequalities -------" << endl;
-	for (int i = PD_m_predef; i < PD_m; i++) {
-		cout << i << ")\t";
-		for (int j = 0; j < PF_MIN(PP_OUTPUT_LIMIT, PD_n); j++) cout << setw(PP_SETW) << PD_A[i][j] << "\t";
-		cout << (PP_OUTPUT_LIMIT < PD_n ? "	..." : "") << "<=\t" << setw(PP_SETW) << PD_b[i] << endl;
-	}
-	cout << "-----------------------------------" << endl;
-#endif // PP_MATRIX_OUTPUT
 
-	cout << "Failures 'Similar' = " << PD_failuresType1 << endl;
+	if (PP_NUM_OF_RND_INEQUALITIES > 0) {
+#ifdef PP_MATRIX_OUTPUT
+		cout << "------- Random inequalities -------" << endl;
+		for (int i = PD_m_predef; i < PD_m; i++) {
+			cout << i << ")\t";
+			for (int j = 0; j < PF_MIN(PP_OUTPUT_LIMIT, PD_n); j++) cout << setw(PP_SETW) << PD_A[i][j] << "\t";
+			cout << (PP_OUTPUT_LIMIT < PD_n ? "	..." : "") << "<=\t" << setw(PP_SETW) << PD_b[i] << endl;
+		}
+		cout << "-----------------------------------" << endl;
+#endif // PP_MATRIX_OUTPUT
+		cout << "Failures 'Similar' = " << PD_failuresType1 << endl;
+	}
 
 	MTX_AddFreeVariables();
 
@@ -399,8 +399,11 @@ void PC_bsf_ProblemOutput(PT_bsf_reduceElem_T* reduceResult, int reduceCounter, 
 		return;
 	}
 	fprintf(stream, "%d 1\n", PD_n);
-	for (int j = 0; j < PD_n; j++)
+	for (int j = 0; j < PP_N; j++)
 		fprintf(stream, "%f\n", -PD_c[j]);
+	for (int j = PP_N; j < PD_n; j++)
+		fprintf(stream, "0\n");
+
 	fclose(stream);
 	cout << "File " << fileName << " successfully created." << endl;
 

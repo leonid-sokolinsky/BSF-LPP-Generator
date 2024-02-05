@@ -9,7 +9,7 @@ This source code is a part of BSF Skeleton (https://github.com/leonid-sokolinsky
 
 //=========================== Skeleton Parameters =========================
 #define PP_BSF_MAX_MPI_SIZE 2		// Do not modify!
-//#define PP_BSF_ITER_OUTPUT			// If it is defined then Iteration Output is performed
+//#define PP_BSF_ITER_OUTPUT		// If it is defined then Iteration Output is performed
 #define PP_BSF_TRACE_COUNT 1		// Each PP_BSF_TRACE_COUNT-th iteration to be outputted
 #define PP_BSF_MAX_JOB_CASE 0		// Defines the maximum number of activities (jobs) in workflow minus 1
 //--------------------------- OpenMP Parameters ---------------------------
