@@ -94,6 +94,7 @@ void PC_bsf_MapF(PT_bsf_mapElem_T* mapElem, PT_bsf_reduceElem_T* reduceElem, int
 	PT_float_T aNormSquare;
 
 	reduceElem->failuresType1 = 0; // Hyperplane is similar to another one
+	reduceElem->failuresType2 = 0; // Point (0,...,0,PP_ALPHA,0,...,0) is not feasible
 
 	if (PP_NUM_OF_RND_INEQUALITIES == 0)
 		return;
@@ -107,6 +108,17 @@ void PC_bsf_MapF(PT_bsf_mapElem_T* mapElem, PT_bsf_reduceElem_T* reduceElem, int
 		reduceElem->b = 0;
 		for (int j = 0; j < PD_n; j++)
 			reduceElem->b += reduceElem->a[j] * term;
+
+		bool failure = false;
+		for (int j = 0; j < PD_n; j++)
+			if (reduceElem->b / reduceElem->a[j] <= PP_ALPHA) { // Point (0,...,0,PP_ALPHA,0,...,0) is not feasible
+				failure = true;
+				break;
+			}
+		if (failure) {
+			reduceElem->failuresType2++;
+			continue;
+		}
 
 		aNormSquare = Vector_NormSquare(reduceElem->a);
 		reduceElem->aNorm = sqrt(aNormSquare);
@@ -139,6 +151,7 @@ void PC_bsf_MapF_3(PT_bsf_mapElem_T* mapElem, PT_bsf_reduceElem_T_3* reduceElem,
 
 void PC_bsf_ReduceF(PT_bsf_reduceElem_T* x, PT_bsf_reduceElem_T* y, PT_bsf_reduceElem_T* z) {			// For Job 0
 	z->failuresType1 = x->failuresType1 + y->failuresType1;
+	z->failuresType2 = x->failuresType2 + y->failuresType2;
 }
 
 void PC_bsf_ReduceF_1(PT_bsf_reduceElem_T_1* x, PT_bsf_reduceElem_T_1* y, PT_bsf_reduceElem_T_1* z) {	// For Job 1
@@ -173,6 +186,7 @@ void PC_bsf_ProcessResults(		// For Job 0
 	}
 
 	PD_failuresType1 += reduceResult->failuresType1;
+	PD_failuresType2 += reduceResult->failuresType2;
 
 	extendedReduceElem = (extendedReduceElem_T*)reduceResult;
 
@@ -287,6 +301,7 @@ void PC_bsf_IterOutput(PT_bsf_reduceElem_T* reduceResult, int reduceCounter, PT_
 		k = PD_k;
 	}
 	cout << "Failures 'Similar' = " << PD_failuresType1 << endl;
+	cout << "Failures '(0," << PP_ALPHA << ",0)' = " << PD_failuresType2 << endl;
 	cout << "-------------------------------------" << endl;
 }
 
@@ -327,6 +342,7 @@ void PC_bsf_ProblemOutput(PT_bsf_reduceElem_T* reduceResult, int reduceCounter, 
 		cout << "-----------------------------------" << endl;
 #endif // PP_MATRIX_OUTPUT
 		cout << "Failures 'Similar' = " << PD_failuresType1 << endl;
+		cout << "Failures '(0," << PP_ALPHA << ",0)' = " << PD_failuresType2 << endl;
 	}
 
 	MTX_AddFreeVariables();

@@ -11,8 +11,8 @@ Publication: Sokolinsky L.B., Sokolinskaya I.M. FRaGenLP: A Generator of Random 
 ==============================================================================*/
 //#define PP_DEBUG
 //=========================== Problem Parameters =========================
-#define PP_N 10
-#define PP_NUM_OF_RND_INEQUALITIES 10	// Number of random inequalities		
+#define PP_N 2
+#define PP_NUM_OF_RND_INEQUALITIES 5	// Number of random inequalities		
 #define PP_RND_SEED 1					// Value used by srand() to seed pseudo-random number generator rand(). 
 #define PP_M (PP_N + 1 + PP_NUM_OF_RND_INEQUALITIES) // Total number of inequalities (+-1)
 #define PP_MTX_NON (PP_M * (PP_N + 1))	// Number of non-zero elements in matrix A for MTX format

@@ -20,6 +20,7 @@ struct PT_bsf_reduceElem_T {	// Type of reduce-list elements for Job 0 (default)
 	PT_float_T b;
 	PT_float_T aNorm;
 	unsigned failuresType1; // Hyperplane is similar to another one
+	unsigned failuresType2; // Point (0,...,0,PP_ALPHA,0,...,0) is not feasible
 };
 
 struct PT_bsf_reduceElem_T_1 {	// Type of reduce-list elements for Job 1

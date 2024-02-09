@@ -15,6 +15,7 @@ static int PD_m_predef; // Number of predefined inequalities
 static PT_float_T PD_sqrt_n; // Square root of n
 static int PD_k; // Index of current random inequality
 static unsigned PD_failuresType1; // Hyperplane is similar to another one
+static unsigned PD_failuresType2; // Point (0,...,0,PP_ALPHA,0,...,0) is not feasible
 
 //========================== Problem data structures ==============================
 static PT_matrix_T PD_A;
