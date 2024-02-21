@@ -1,6 +1,6 @@
 /*==============================================================================
 Project: LiFe
-Theme: LPP Generator
+Theme: LPP Generator (MPI)
 Module: BSF-Types.h (Problem Independent Types)
 Prefix: BT
 Author: Leonid B. Sokolinsky 

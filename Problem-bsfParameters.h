@@ -1,6 +1,6 @@
 /*==============================================================================
 Project: LiFe
-Theme: LPP Generator
+Theme: LPP Generator (MPI)
 Module: Problem-bsfParameters.h (BSF-skeleton parameters)
 Prefix: PP_BSF
 Author: Leonid B. Sokolinsky

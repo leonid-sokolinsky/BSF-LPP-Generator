@@ -1,6 +1,6 @@
 /*==============================================================================
 Project: LiFe
-Theme: LPP Generator
+Theme: LPP Generator (MPI)
 Module: Problem-bsfTypes.h (Predefined Problem-depended BSF Types)
 Prefix: PT_bsf
 Author: Leonid B. Sokolinsky

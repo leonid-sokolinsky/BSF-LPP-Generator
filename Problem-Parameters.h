@@ -1,6 +1,6 @@
 /*==============================================================================
 Project: LiFe
-Theme: LPP Generator
+Theme: LPP Generator (MPI)
 Module: Problem-Parameters.h (Problem Parameters)
 Prefix: PP
 Author: Leonid B. Sokolinsky
@@ -10,10 +10,11 @@ Publication: Sokolinsky L.B., Sokolinskaya I.M. FRaGenLP: A Generator of Random 
 	DOI:10.1007/978-3-030-81691-9_12.
 ==============================================================================*/
 //#define PP_DEBUG
+#define PP_PATH "D:/YandexDisk/_private/Programming/LP-Rnd-Problems/"
 //=========================== Problem Parameters =========================
 #define PP_N 10
 #define PP_NUM_OF_RND_INEQUALITIES 1	// Number of random inequalities		
-#define PP_RND_SEED 5					// Value used by srand() to seed pseudo-random number generator rand(). 
+#define PP_RND_SEED 6					// Value used by srand() to seed pseudo-random number generator rand(). 
 #define PP_M (PP_N + 1 + PP_NUM_OF_RND_INEQUALITIES) // Total number of inequalities (+-1)
 #define PP_MTX_NON (PP_M * (PP_N + 1))	// Number of non-zero elements in matrix A for MTX format
 										//		0 corresponds to value depending on time.
@@ -26,8 +27,7 @@ Publication: Sokolinsky L.B., Sokolinskaya I.M. FRaGenLP: A Generator of Random 
 //-------------------------- Outpoot Parameters ---------------------------
 #define PP_OUTPUT_LIMIT	8	// Number of Elements to output
 #define PP_SETW 8
-#define PP_MATRIX_OUTPUT	
-#define PP_PATH "C:/TEMP/"
+//#define PP_MATRIX_OUTPUT	
 //#define PP_PATH "D:/YandexDisk/_private/Programming/LP-Problems/"
 //#define PP_PATH ""
 #define PP_PROBLEM_NAME "rnd"

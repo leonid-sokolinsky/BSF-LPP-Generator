@@ -1,6 +1,6 @@
 /*==============================================================================
 Project: LiFe
-Theme: LPP Generator
+Theme: LPP Generator (MPI)
 Module: Problem-bsf-Forwards.h (Problem Function Forwards)
 Author: Leonid B. Sokolinsky 
 ==============================================================================*/

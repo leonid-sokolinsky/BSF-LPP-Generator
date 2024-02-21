@@ -1,6 +1,6 @@
 /*==============================================================================
 Project: LiFe
-Theme: LPP Generator
+Theme: LPP Generator (MPI)
 Module: Problem-Include.h (Problem "Include" Files)
 Author: Leonid B. Sokolinsky
 ==============================================================================*/

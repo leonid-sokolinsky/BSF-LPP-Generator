@@ -1,6 +1,6 @@
 /*==============================================================================
 Project: LiFe
-Theme: LPP Generator
+Theme: LPP Generator (MPI)
 Module: Problem-Data.h (Problem Data)
 Prefix: PD
 Author: Leonid B. Sokolinsky

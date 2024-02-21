@@ -1,6 +1,6 @@
 /*==============================================================================
 Project: LiFe
-Theme: LPP Generator
+Theme: LPP Generator (MPI)
 Module: Problem-bsfCode.cpp (Problem-dependent Code)
 Prefix: PC
 Author: Leonid B. Sokolinsky
@@ -63,8 +63,16 @@ void PC_bsf_Init(bool* success) {
 		for (int j = 0; j < PD_n; j++)
 			PD_c[j] = (PT_float_T)(j + 1);
 	else // Random objective function
-		for (int j = 0; j < PD_n; j++) 
-			PD_c[j] = (PT_float_T)(rand() % PD_n + 1);
+	{
+		for (int j = 0; j < PD_n; j++)
+			PD_c[j] = 0;
+		for (int j = 0; j < PD_n; j++) {
+			int rnd_j = rand() % PD_n;
+			while (PD_c[rnd_j] != 0)
+				rnd_j = rand() % PD_n;
+			PD_c[rnd_j] = (PT_float_T)(j + 1);
+		}
+	}
 
 	for (int i = 0; i < PD_m; i++)
 		PD_aNorm[i] = sqrt(Vector_NormSquare(PD_A[i]));

@@ -1,6 +1,6 @@
 /*==============================================================================
 Project: LiFe
-Theme: LPP Generator
+Theme: LPP Generator (MPI)
 Module: Problem-Types.h (Problem Types)
 Prefix: PT
 Author: Leonid B. Sokolinsky
