@@ -10,7 +10,7 @@ Publication: Sokolinsky L.B., Sokolinskaya I.M. FRaGenLP: A Generator of Random 
 	DOI:10.1007/978-3-030-81691-9_12.
 ==============================================================================*/
 //#define PP_DEBUG
-#define PP_PATH "D:/YandexDisk/_private/Programming/LP-Rnd-Problems/"
+#define PP_PATH "D:/YandexDisk/_private/Programming/Set-of-LP-Problems/Rnd-LP/"
 //=========================== Problem Parameters =========================
 #define PP_N 10
 #define PP_NUM_OF_RND_INEQUALITIES 1	// Number of random inequalities		

@@ -98,6 +98,10 @@ void PC_bsf_CopyParameter(PT_bsf_parameter_T parameterIn, PT_bsf_parameter_T* pa
 
 }
 
+void PC_bsf_MainArguments(int argc, char* argv[]) {
+	// Not used
+}
+
 void PC_bsf_MapF(PT_bsf_mapElem_T* mapElem, PT_bsf_reduceElem_T* reduceElem, int* success) {	// For Job 0
 	PT_float_T aNormSquare;
 
@@ -154,6 +158,10 @@ void PC_bsf_MapF_2(PT_bsf_mapElem_T* mapElem, PT_bsf_reduceElem_T_2* reduceElem,
 }
 
 void PC_bsf_MapF_3(PT_bsf_mapElem_T* mapElem, PT_bsf_reduceElem_T_3* reduceElem, int* success) {// For Job 3
+	// Not used
+}
+
+void PC_bsf_MapInit(PT_bsf_parameter_T parameter) {
 	// Not used
 }
 
@@ -254,11 +262,7 @@ void PC_bsf_ProcessResults_3(	// For Job 3
 	// Not used
 }
 
-void PC_bsf_JobDispatcher(
-	PT_bsf_parameter_T* parameter, // Current Approximation
-	int* job,
-	bool* exit
-) {
+void PC_bsf_JobDispatcher(PT_bsf_parameter_T* parameter, int* job, bool* exit, double t) {
 	// Not used
 }
 
